@@ -9,18 +9,6 @@
 #include <time.h>
 #include <iostream>
 
-// void product_cpu_cal2(double* sum_ptr, const double* a, const double* b, long M, long N){
-//     double sum = 0;
-//     for(long j = 0; j < M; ++j){
-//         sum = 0;
-//         #pragma omp parallel for schedule(static) reduction(+:sum)
-//         for(long i = 0; i < N; ++i){
-//             sum += a[j*M+i] * b[i];
-//         }
-//         sum_ptr[j] = sum;
-//     }
-// }
-
 void Check_CUDA_Error(const char *message){
   cudaError_t error = cudaGetLastError();
   if(error!=cudaSuccess) {
